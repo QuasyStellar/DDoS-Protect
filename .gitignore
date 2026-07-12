@@ -1,0 +1,4 @@
+*.o
+*.swp
+/tests/
+geo_block.sh

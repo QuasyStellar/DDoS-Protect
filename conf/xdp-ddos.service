@@ -1,0 +1,13 @@
+[Unit]
+Description=Load XDP DDoS Filter
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStartPre=-/sbin/ip link set dev {{IFACE}} xdp off
+ExecStart=/sbin/ip link set dev {{IFACE}} xdp obj /usr/local/lib/xdp_filter.o sec xdp
+ExecStop=/sbin/ip link set dev {{IFACE}} xdp off
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
