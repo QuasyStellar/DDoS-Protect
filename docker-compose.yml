@@ -1,0 +1,11 @@
+services:
+  ddos-daemon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ddos-protect
+    restart: always
+    network_mode: host
+    privileged: true
+    env_file:
+      - .env

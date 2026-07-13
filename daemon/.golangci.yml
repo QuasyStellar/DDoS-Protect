@@ -1,0 +1,4 @@
+issues:
+  exclude-files:
+    - ".*_bpfel\\.go$"
+    - ".*_bpfeb\\.go$"

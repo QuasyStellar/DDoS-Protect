@@ -1,0 +1,8 @@
+.env
+*.log
+*.swp
+# Compiled artifacts
+daemon/ddos-daemon
+daemon/daemon
+daemon/xdpfilter_bpf*
+*.o

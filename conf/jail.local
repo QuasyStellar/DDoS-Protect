@@ -1,0 +1,20 @@
+[nginx-limit-req]
+enabled = true
+port    = http,https
+filter  = nginx-limit-req
+banaction = nftables-multiport
+banaction_allports = nftables-allports
+logpath = /var/log/nginx/error.log
+findtime = 60
+bantime = 600
+maxretry = 20
+
+[sshd]
+enabled = true
+port    = ssh
+banaction = nftables-multiport
+banaction_allports = nftables-allports
+logpath = %(sshd_log)s
+backend = %(sshd_backend)s
+maxretry = 5
+bantime = 3600

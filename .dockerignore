@@ -1,0 +1,18 @@
+# Git
+.git
+.gitignore
+
+# Env files (secrets should never be in the image)
+.env
+.env.*
+
+# Compiled artifacts (built inside Docker, not needed as context)
+daemon/ddos-daemon
+daemon/xdpfilter_bpf*
+*.o
+
+# Docs, configs, examples (runtime image only needs the daemon binary)
+README.md
+LICENSE
+conf/
+.github/
